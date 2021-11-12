@@ -11,7 +11,7 @@ cmake_parse_arguments(
 )
 
 # Locate the riscv toolchain components
-set(RISCV_PREFIX riscv32-unknown-elf)
+set(RISCV_PREFIX riscv-none-embed)
 find_program(RISCV_CXX ${RISCV_PREFIX}-g++)
 find_program(RISCV_OBJCOPY ${RISCV_PREFIX}-objcopy)
 

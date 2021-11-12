@@ -5,7 +5,7 @@ module rgb_led_wb(
     input wire i_clk,
     input wire i_reset,
     // Output BGR signal
-    output reg [2:0] o_led_bgr,
+    output reg o_led,
     // Wishbone
     input  wire [31:0] i_wb_adr,
     input  wire [31:0] i_wb_dat,
@@ -44,10 +44,10 @@ always @(posedge i_clk) begin
     end
 
     // Update output with the result of the compare registers
-    o_led_bgr <= {
-        pwm_compare >= ocr_b,
-        pwm_compare >= ocr_g,
-        pwm_compare >= ocr_r
+    o_led <= {
+        pwm_compare > ocr_b &
+        pwm_compare > ocr_g &
+        pwm_compare > ocr_r
     };
 end
 

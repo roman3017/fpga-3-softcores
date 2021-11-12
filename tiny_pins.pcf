@@ -1,0 +1,7 @@
+# Left side of board
+set_io --warn-no-port MCU_UART_RX A2
+set_io --warn-no-port MCU_UART_TX A1
+# LED
+set_io -nowarn LED B3
+# 16MHz clock
+set_io --warn-no-port CLK B2 # input

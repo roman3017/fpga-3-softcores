@@ -4,10 +4,10 @@
 
 module top(
     // External oscillator
-    input wire CLK_12MHZ,
+    input wire CLK,
 
     // Debug LED
-    output wire [2:0] LED,
+    output wire LED,
 
     // Uart bridge to MCU
     input wire MCU_UART_TX,
@@ -19,7 +19,7 @@ module top(
 // PLL
 wire wb_clk;
 ice_pll pll (
-    .clock_in(CLK_12MHZ),
+    .clock_in(CLK),
     .clock_out(wb_clk),
     .locked()
 );
@@ -109,7 +109,7 @@ uart_wb #(
 rgb_led_wb led0 (
     .i_clk(wb_clk),
     .i_reset(reset),
-    .o_led_bgr(LED),
+    .o_led(LED),
     .i_wb_adr(wb_m2s_led0_adr),
     .i_wb_dat(wb_m2s_led0_dat),
     .i_wb_sel(wb_m2s_led0_sel),

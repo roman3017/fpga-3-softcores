@@ -132,7 +132,7 @@ void init() {
   asm volatile("csrs mstatus, %0" ::"i"(1 << 3));
 
   // Set our uart prescaler
-  UART_PRESCALER = CPU_CLK_HZ / 2'000'000 - 1;
+  UART_PRESCALER = CPU_CLK_HZ / 115'200 - 1;
 
   // Set our timer counter prescaler
   TIMER_PRESCALER = CPU_CLK_HZ / 1'000 - 1;

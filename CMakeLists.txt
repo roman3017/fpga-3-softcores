@@ -34,9 +34,9 @@ set(NEXTPNR_ARGS ${NEXTPNR_ARGS} --asc ${PROJECT_NAME}.asc)
 
 
 set(PROJECT_TOP top)
-set(PLACEMENT_FILE hx4k_pmod.pcf)
+set(PLACEMENT_FILE tiny_pins.pcf)
 set(FPGA_DEVICE hx8k)
-set(FPGA_PACKAGE tq144:4k)
+set(FPGA_PACKAGE cm81)
 set(FREQ_MHZ 42)
 set(SYNTHESIS_ARGS "-abc9 -dsp")
 set(VERILOG_SOURCES

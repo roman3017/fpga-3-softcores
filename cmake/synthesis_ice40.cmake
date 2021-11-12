@@ -4,7 +4,7 @@ function(synth_ice40 TARGET_NAME)
 find_program(YOSYS_CMD yosys)
 find_program(NEXTPNR_ICE40_CMD nextpnr-ice40)
 find_program(ICEPACK_CMD icepack)
-find_program(FPGA_PROG_CMD faff)
+find_program(FPGA_PROG_CMD tinyprog)
 
 # Compose the yosys command
 set(YOSYS_READ_VERILOG "")
@@ -64,7 +64,7 @@ add_custom_target(${TARGET_NAME}_flash
 )
 add_custom_command(
     TARGET ${TARGET_NAME}_flash
-    COMMAND ${FPGA_PROG_CMD} ARGS -f ${PROJECT_NAME}.bit
+    COMMAND ${FPGA_PROG_CMD} ARGS -p ${PROJECT_NAME}.bit
     DEPENDS ${PROJECT_NAME}.bit
     VERBATIM
 )
